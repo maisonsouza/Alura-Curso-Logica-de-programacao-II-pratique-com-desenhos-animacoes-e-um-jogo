@@ -1,0 +1,20 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+  var tela = document.querySelector('canvas');
+  var pincel = tela.getContext('2d');
+  pincel.fillStyle = 'lightgray';
+  pincel.fillRect(0,0,600,400);
+
+  function desenhaBolinha(MouseEvent){
+    var x = MouseEvent.pageX - tela.offsetLeft;
+    var y = MouseEvent.pageY - tela.offsetTop;
+    pincel.fillStyle = 'red';
+    pincel.beginPath();
+    pincel.arc(x,y,10,0,2*3.14);
+    pincel.fill();
+  }
+
+tela.onclick = desenhaBolinha;
+</script>
